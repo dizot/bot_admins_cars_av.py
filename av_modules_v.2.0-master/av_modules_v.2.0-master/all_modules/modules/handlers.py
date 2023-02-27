@@ -158,15 +158,17 @@ def query_handler(call):
 
     if flag == 'b0':
         bot.edit_message_text("Вы действительно хотите изменить администратора?", chat_id=id,
+                              message_id=call.message.message_id, reply_markup=inline_markup_change_ad)
 
 
     if flag == 'o0':
         bot.edit_message_text("Выберите администратора, которого хотите изменить", chat_id=id,
+                              message_id=call.message.message_id, reply_markup=keyb_change_ad())
 
 
 
 
-    if    if flag == 'o1':
+    if flag == 'o1':
         dict_data[id] = data
         print("dict_data", dict_data)
         bot.edit_message_text(f"Имя пользователя: {dict_admins[int(data)]['user_name']} \nУровень прав: "
